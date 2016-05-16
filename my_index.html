@@ -18,8 +18,8 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="wraper">
-      <button id="eraser" type="button" class="btn btn-default" data-toggle="modal" data-target="#mySetting" onclick="modalSubmition()"></button>
+    <div class="wrapper">
+      <button id="logo" type="button" class="btn btn-default" data-toggle="modal" data-target="#mySetting" onclick="modalSubmition()"></button>
       <div class="button-group">
           <button id="reset" >Reset</button>
           <button id="restore">Restore Last Game</button>
@@ -31,28 +31,25 @@
       </div>
       <div class="game_board">
       </div><!--end of game board-->
-
-
-
       <!-- Modal -->
       <div class="modal fade" id="mySetting" role="dialog">
           <div class="modal-dialog">
-
            <!-- Modal content-->
            <div class="modal-content">
-             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">settings</h2>
-             </div>
+             <!--<div class="modal-header">-->
+                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                <!--<h2 class="modal-title">settings</h2>-->
+             <!--</div>-->
              <div class="modal-body">
+                 <h2 class="modal-title">Settings</h2>
                  <div class="form-inline" role="form">
-                     <h4>Enter players name:</h4>
+                     <h4 id="mod-plyr-name-heading">Enter players name:</h4>
                      <div class="form-group">
-                       <label for="player1">First Player: </label>
+                       <label for="player1">Player 1: </label>
                        <input class="form-control" type="text" id="player1">
                      </div>
                      <div class="form-group">
-                         <label for="player2">First Player: </label>
+                         <label for="player2">Player 2: </label>
                          <input class="form-control" type="text" id="player2">
                      </div>
                  </div>
@@ -162,7 +159,7 @@
                          <option value="50">50</option>
                      </select>
                      </div>
-                 <div class="theme_piching">
+                 <div class="theme_picking">
                      <h4>Pick your favorite theme:</h4>
                      <select class="theme_picker_select form-control" name="battle_ground">
                          <option value="auto_shop">Auto Shop</option>
@@ -216,8 +213,8 @@
                      </audio>
                  </div><!--closing audio div-->
                  <button id="setting_submit" type="submit" class="btn btn-info">Submit</button>
-             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+             <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
              </div>
            </div>
          </div>

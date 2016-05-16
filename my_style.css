@@ -280,7 +280,7 @@
 }
 
 /****************************my part***************************************/
-.wraper {
+.wrapper {
     width: 100vw;
     height: 100vh;
     background: url(images/back1.jpg) no-repeat;
@@ -308,43 +308,66 @@
     left: 50%;
     transform: translateX(-50%);
 }
-#eraser {
+#logo {
     position: absolute;
     top:3vh;
     left: 3vw;
     color: #fff;
-    width:20vh;
-    height:20vh;
+    width:7vh;
+    height:7vh;
     background-color: inherit;
-    background: url("images/Greentech-Automotive-Logo.png")no-repeat;
+    background: url("images/mp.gif")no-repeat;
     background-size: contain;
-    border: 0;
+    border: 2px solid lightgreen;
     transition-duration: 1s;
     transform: scale(1);
+    border-radius: 50%;
 }
-#eraser:hover {
+#logo:hover {
     transform: scale(1.1);
 }
-#eraser:focus, .button-group button:focus {
+#logo:focus, .button-group button:focus {
     outline: none;
 }
-.modal label, .modal h4, .modal input, .modal-content, .form-control,
-.modal select option, .modal button{
+
+.modal-dialog {
+    width: 80vh;
+    height: 80vh;
+    border-radius: 50%;
+}
+.modal label,
+.modal h4,
+.modal input,
+.form-control,
+.modal select option
+{
     font-family: 'Roboto', sans-serif;
-    line-height: 2.5em;
+    line-height: 1.5em;
+    position: relative;
+    top: 5vh;
 }
-.modal button {
-    margin: 2% auto;
-    padding:-1em ;
-}
+/*.modal button {*/
+    /*margin: 2% auto;*/
+    /*padding:-1em ;*/
+/*}*/
 .modal-content {
-    background: url("images/modal back.jpg") no-repeat;
+    background: url("images/modalbackground.png") no-repeat;
     background-size: cover;
     padding: 5%;
+    width: 80vh;
+    height: 80vh;
+    border-radius: 50%;
+    color: white;
+    text-shadow: 1px 1px 5px black;
 }
-.modal-header {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
+/*.modal-header {*/
+    /*text-align: center;*/
+    /*font-family: 'Roboto', sans-serif;*/
+/*}*/
+.setting_submit{
+    background: url("images/modalbackground.png") no-repeat;
+    background-size: cover;
+    border-radius: 50%;
 }
 .button-group {
     position: absolute;
