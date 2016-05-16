@@ -334,7 +334,18 @@
     width: 80vh;
     height: 80vh;
     border-radius: 50%;
+    box-shadow: 5px 5px 25px black;
+
 }
+
+.modal-top-spacer { line-height: 20vh;}
+
+select option {
+color: black;
+}
+
+
+.modal-title,
 .modal label,
 .modal h4,
 .modal input,
@@ -345,7 +356,16 @@
     line-height: 1.5em;
     position: relative;
     top: 5vh;
+    color: #ffff66;
+    text-shadow: 2px 2px 5px black;
 }
+
+.modal-title,
+.modal h4 {text-align: center;}
+
+.player1-form { position: relative; left: 10%;}
+.player2-form { position: relative; left: 15%;}
+.modal select { width: 10vw; left: 50%; transform: translateX(-50%);}
 /*.modal button {*/
     /*margin: 2% auto;*/
     /*padding:-1em ;*/
@@ -357,18 +377,40 @@
     width: 80vh;
     height: 80vh;
     border-radius: 50%;
-    color: white;
-    text-shadow: 1px 1px 5px black;
+    color: purple;
+    text-shadow: 1px 1px 5px orange;
 }
 /*.modal-header {*/
     /*text-align: center;*/
     /*font-family: 'Roboto', sans-serif;*/
 /*}*/
-.setting_submit{
-    background: url("images/modalbackground.png") no-repeat;
+#setting_submit, #restore, #reset, .pause-background-sound-button {
+    background-image: url("images/modalbackground.png");
     background-size: cover;
+    height: 7vh;
+    width: 7vh;
     border-radius: 50%;
+    color: #ffff66;
+    font-size: 1.9em;
+    text-shadow: 1px 1px 5px black;
+    position: absolute;
+    top: 60vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
+#restore {
+    height: 12vh;
+    width: 12vh;
+    top: 40vh;
+}
+#reset, .pause-background-sound-button {
+    height: 5vh;
+    width: 5vh;
+    font-size: 1em;
+    position: static;
+}
+#restore, #setting_submit {animation: glowing 1000ms infinite;}
+.pause-background-sound-button { border-radius: 50%; position: relative; top: 1vh;}
 .button-group {
     position: absolute;
     font-size: 1.5em;

@@ -22,7 +22,7 @@
       <button id="logo" type="button" class="btn btn-default" data-toggle="modal" data-target="#mySetting" onclick="modalSubmition()"></button>
       <div class="button-group">
           <button id="reset" >Reset</button>
-          <button id="restore">Restore Last Game</button>
+          <button class="pause-background-sound-button"></button>
       </div>
       <div class="player_names">
             <span class="col-sm-5 xs-hidden" id="player_one"></span>
@@ -41,14 +41,14 @@
                 <!--<h2 class="modal-title">settings</h2>-->
              <!--</div>-->
              <div class="modal-body">
+                 <br id="modal-top-spacer">
                  <h2 class="modal-title">Settings</h2>
-                 <div class="form-inline" role="form">
-                     <h4 id="mod-plyr-name-heading">Enter players name:</h4>
-                     <div class="form-group">
+                 <h4 id="mod-plyr-name-heading">Enter players name:</h4>
+                 <div class="form-inline  player1-form" role="form">                                <div class="form-group">
                        <label for="player1">Player 1: </label>
                        <input class="form-control" type="text" id="player1">
                      </div>
-                     <div class="form-group">
+                     <div class="form-group player2-form">
                          <label for="player2">Player 2: </label>
                          <input class="form-control" type="text" id="player2">
                      </div>
@@ -212,7 +212,8 @@
                          <source src="audio/intro_song_barney.mp3" type="audio/mpeg">
                      </audio>
                  </div><!--closing audio div-->
-                 <button id="setting_submit" type="submit" class="btn btn-info">Submit</button>
+                 <button id="restore">Restore Last Game</button>
+                 <button id="setting_submit" type="submit" >Submit</button>
              <!--<div class="modal-footer">-->
                 <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
              </div>
