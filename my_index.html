@@ -172,7 +172,7 @@
                      </select>
                  </div>
                  <div class="sound-control">
-                     <audio loop id="background_sound_auto_shop">
+                     <audio loop id="auto_shop_background_sound">
                          <source src="audio/background_sound_auto_shop.mp3" type="audio/mpeg">
                      </audio>
                      <audio loop id="starwars-background-sound">
@@ -184,6 +184,9 @@
                      </audio>
                      <audio loop id="beach-background-sound">
                          <source src="audio/background_sound_beach.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio loop id="classroom-background-sound">
+                         <source src="audio/background_sound_classroom.mp3" type="audio/mpeg">
                      </audio>
                      <audio loop id="girlfight-background-sound">
                          <source src="audio/background_sound_girlfight.mp3" type="audio/mpeg">
@@ -203,15 +206,18 @@
                      <audio id="click-sound-girlfight">
                          <source src="audio/click_sound_girlfight.mp3" type="audio/mpeg">
                      </audio>
+                     <audio id="click-sound-classroom">
+                         <source src="audio/click_sound_chalk.mp3" type="audio/mpeg">
+                     </audio>
                      <audio id="game-won-sound">
                          <source src="audio/game_won_clapping.mp3" type="audio/mpeg">
                      </audio>
                      <audio id="button-click-sound">
                          <source src="audio/button_click_sound.mp3" type="audio/mpeg">
                      </audio>
-                     <audio loop id="intro-sound">
-                         <source src="audio/intro_song_barney.mp3" type="audio/mpeg">
-                     </audio>
+                     <!--<audio loop id="intro-sound">-->
+                         <!--<source src="audio/intro_song_barney.mp3" type="audio/mpeg">-->
+                     <!--</audio>-->
                  </div><!--closing audio div-->
                  <button id="restore">Restore Last Game</button>
                  <button onclick="modalSubmition()" id="setting_submit" type="submit" data-dismiss="modal">Submit</button>

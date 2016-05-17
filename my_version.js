@@ -7,7 +7,7 @@ var player2_name_value;
 var num_of_rows = 3;
 var num_of_cells_to_win = 3;
 var theme_value = "auto_shop";
-var background_value = "background_sound_auto_shop";
+//var background_value = "background_sound_auto_shop";
 var player_symbol = 'ex';
 var grid_array = [];
 var last_clicked;
@@ -127,7 +127,6 @@ function animate_name () {
 function modalSubmition() {
     game_won= false;
     //////getting players names
-    theme_background_sound_pause(theme_value);
     player1_name_value = $("#player1").val();
     player2_name_value = $("#player2").val();
     $("#player_one").text(player1_name_value);
@@ -166,12 +165,10 @@ function modalSubmition() {
               $("#vs").text("");
            }
     /////////////getting theme
+    theme_background_sound_pause (theme_value);
     //capture theme, store as var
     theme_value = $(".theme_picker_select").val();
     console.log('theme picked = theme_value, is : ' + theme_value);
-
-    theme_background_sound_pause_initiator();
-
     $(".game_board").empty();
     grid_array = [];
     create_grid_array();
@@ -191,11 +188,12 @@ function theme_background_sound_play (theme_value){
     var desert_background_sound = document.getElementById('desert-background-sound');
     var beach_background_sound = document.getElementById('beach-background-sound');
     var girlfight_background_sound = document.getElementById('girlfight-background-sound');
-    var background_sound_auto_shop = document.getElementById('background_sound_auto_shop');
+    var auto_shop_background_sound = document.getElementById('auto_shop_background_sound');
+    var classroom_background_sound = document.getElementById('classroom-background-sound');
     switch(theme_value){
         case "auto_shop":
-            background_sound_auto_shop.play();
-            background_sound_auto_shop.loop = true;
+            auto_shop_background_sound.play();
+            auto_shop_background_sound.loop = true;
             break;
         case "star_wars":
             starwars_background_sound.play();
@@ -213,6 +211,10 @@ function theme_background_sound_play (theme_value){
             girlfight_background_sound.play();
             girlfight_background_sound.loop = true;
             break;
+        case "class_room":
+            classroom_background_sound.play();
+            classroom_background_sound.loop = true;
+            break;
         default: return;
     }//end switch
 }//end theme_background_sound_play function
@@ -222,7 +224,8 @@ function theme_background_sound_pause (theme_value){
     var desert_background_sound = document.getElementById('desert-background-sound');
     var beach_background_sound = document.getElementById('beach-background-sound');
     var girlfight_background_sound = document.getElementById('girlfight-background-sound');
-    var background_sound_auto_shop = document.getElementById('background_sound_auto_shop');
+    var background_sound_auto_shop = document.getElementById('auto_shop_background_sound');
+    var classroom_background_sound = document.getElementById('classroom-background-sound');
     switch(theme_value){
         case "auto_shop":
             background_sound_auto_shop.pause();
@@ -239,12 +242,15 @@ function theme_background_sound_pause (theme_value){
         case "girl_fight":
             girlfight_background_sound.pause();
             break;
+        case "class_room":
+            classroom_background_sound.pause();
+            break;
         default: return;
     }//end switch
 }//end theme_background_sound_pause function
 
 function theme_background_sound_pause_initiator(){
-    theme_background_sound_pause (theme_value);
+    theme_background_sound_pause(theme_value);
 }// needed to call theme background sound pause from doc.ready
 
 function theme_click_sound_controls (theme_value){
@@ -263,6 +269,9 @@ function theme_click_sound_controls (theme_value){
             break;
         case "girl_fight":
             cell_click_sound_control("click-sound-girlfight");
+            break;
+        case "class_room":
+            cell_click_sound_control("click-sound-classroom");
             break;
         default: return;
     }//end switch
@@ -301,7 +310,7 @@ function theme_background_changer(theme_value){  //take input: theme_value and c
     //change background
     switch(theme_value) {
         case "auto_shop":
-            $('.wrapper').css("background-image", "url(images/back1.jpg)");
+            $('.wrapper').css("background-image", "url(images/background/auto_shop_background.jpg)");
             break;
         case "star_wars":
             $('.wrapper').css("background-image", "url(images/background/starwars_background.jpg)");
@@ -316,7 +325,7 @@ function theme_background_changer(theme_value){  //take input: theme_value and c
             $('.wrapper').css("background-image", "url(images/background/girlfight_background.jpg)");
             break;
         case "class_room":
-            $('.wrapper').css("background-image", "url(images/chalkboard.jpg)");
+            $('.wrapper').css("background-image", "url(images/background/classroom_background.jpg)");
             break;
         default: return;
     }//end switch
@@ -340,7 +349,7 @@ function theme_ex_changer(theme_value){ //take input: theme_value and changes ex
             $('.ex').css("background-image", "url(images/x/girlfight_x.png)");
             break;
         case "class_room":
-            $('.ex').css("background-image", "url(images/x.png)");
+            $('.ex').css("background-image", "url(images/x/classroom_x.png)");
             break;
         default: return; //why staying at background not work, had to switch background-image
     }//end switch
@@ -365,7 +374,7 @@ function theme_ow_changer(theme_value){  //take input: theme_value and changes b
             $('.ow').css("background-image", " url(images/o/girlfight_o.png)");
             break;
         case "class_room":
-            $('.ow').css("background-image", " url(images/o.png)");
+            $('.ow').css("background-image", " url(images/o/classroom_o.png)");
             break;
         default: return;
     }//end switch
@@ -394,7 +403,7 @@ function theme_font_changer(theme_value){
         case "girl_fight":
             $('*').css("font-family", "GFS Didot, serif");
             $(".game_title").html("YOU, ARE <span> NOT </span> PREPARED !!!");
-            $("h3 span").css("font-size", "2em");
+            $("h3 span").css("font-size", "1em");
             break;
         default: return; //why staying at background not work, had to switch background-image
     }//end switch
@@ -465,45 +474,23 @@ function toggle_and_get_current_symbol(){
 
 //TODO **** begin document ready
 $(document).ready(function(){
-    // //TODO 0.9 click sound for all button clicks
-    // $("button, input").click(button_click_sound);
+    // //TODO 0.9 click sound for all button clicks/
+     $("button, input").click(button_click_sound);
     // //TODO 1. players will enter name into input field + click submit, click function will
     // //Player1-name-value capture
     // $("#player1-name-submit").click(click_player1_name);
     // //Player2-name-value capture
     // $("#player2-name-submit").click(click_player2_name);
-    //
-    // // TODO 2. capture num_of_rows and create game board when submit button is clicked
-    // $("#number_of_rows-submit").click(num_of_row_capture);
-    //
-    // // TODO 3. capture num_of_cells_to_win
-    // $("#number_of_matches-submit").click(num_of_cells_capture);
-    //
-    // // TODO 3.5 capture theme value and create themes
-    // $("#theme_picker-submit").click(theme_value_capture);
-    //
-    // // TODO 3.6 load intro sound
-    // intro_sound_play();
-    //
-    // // TODO 3.65 "shut up barney button"
-    // $(".shutup-barney-button").click(intro_sound_pause);
-    //
-    // // TODO 3.7 disable background sound button theme_background_sound_pause
-    // $(".pause-background-sound-button").click(theme_background_sound_pause_initiator);
-    //
-    // // TODO 4. using jquery to dynamically create game board based on user input
-    // //creating the array grid
+    // theme_background_sound_play(theme_value);
+    // theme_click_sound_controls(theme_value);
+    // theme_background_changer(theme_value);
     create_grid_array();
     /////dynamic creation of game board
     game_board_creation();
-     $("#setting_submit").click(modalSubmition);
+     //$("#setting_submit").click(modalSubmition);
     // //TODO RESET BUTTON
     $("#reset").click(reset);//end RESET
-    //
-    // //TODO LOCAL STORAGE RESTORE
-
-    //
-    // //TODO RESTORE BUTTON
+    //TODO RESTORE BUTTON
     $('#restore').click(function () {
         last_data = local_storage_restore();
         restore_last_game_board(last_data);
@@ -518,8 +505,7 @@ function reset() {
     player_symbol = 'ex';
     last_clicked = null;
     game_won = false;
-
-    // theme_background_sound_pause_initiator();   //pause current theme background sound to prevent overlapping of theme sounds when user chooses new one.
+    //theme_background_sound_pause_initiator();   //pause current theme background sound to prevent overlapping of theme sounds when user chooses new one.
     grid_array = [];                            //reset the grid
     create_grid_array();                        //recreate array
     console.log("grid_array is now: "+grid_array);
@@ -538,8 +524,8 @@ function check_the_win (row, col) {
         console.log("col win", col_win);
     } else {                            // ie. if row win
         game_won = true;
-        // animate_winner_name ();
-        // applause_winner();
+        animate_winner_name ();
+        applause_winner();
 
     }
     if(!row_win && !col_win) {   // if no match in row or column
@@ -547,8 +533,8 @@ function check_the_win (row, col) {
         console.log("left to right win: ", left_right_win);
     }else {                      // if match in row or column
         game_won = true;
-        // animate_winner_name ();
-        // applause_winner();
+        animate_winner_name ();
+        applause_winner();
     }
     if (!row_win && !col_win && !left_right_win) {  //  if no row , column or left to right diagonal matches
         var right_left_win = diagonal_check_right_to_left(row, col);  // check diagonal right to left
@@ -556,13 +542,13 @@ function check_the_win (row, col) {
         /////////if there is a match in the last case
         if (right_left_win) {                   // if right to left match
             game_won = true;
-            // animate_winner_name ();
-            // applause_winner();
+            animate_winner_name ();
+            applause_winner();
         }
     }else {
         game_won = true;
-        // animate_winner_name ();
-        // applause_winner();
+        animate_winner_name ();
+        applause_winner();
     }
 
 }//check the win

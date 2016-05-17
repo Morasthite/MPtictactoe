@@ -283,7 +283,7 @@
 .wrapper {
     width: 100vw;
     height: 100vh;
-    background: url(images/back1.jpg) no-repeat;
+    background: url("images/background/auto_shop_background.jpg") no-repeat;
     background-size:cover;
     padding: 5%;
 }
@@ -493,13 +493,13 @@ div > div:nth-child(5) > select > option
     background-color: rgba(102,102,0,.4);
 }
 .ex {
-    background-image: url("images/newX.png");
+    background-image: url("images/x/auto_shop_x.png");
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: center;
 }
 .ow {
-    background-image: url(images/Tire.png);
+    background-image: url("images/o/auto_shop_o.png");
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: center;
