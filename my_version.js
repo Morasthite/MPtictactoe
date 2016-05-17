@@ -389,12 +389,12 @@ function theme_font_changer(theme_value){
             $('*').css("font-family", "Arial");
             $(".game_title").html("STAR TREK  <span> RULES</span> !!!");
             $(".game_title").css("color", "black");
-            $("h4").css("font-size",".8em");
+            //$("h4").css("font-size",".8em");
             break;
         case "desert_warfare":
             $('*').css("font-family", "Noto Serif");
             $(".game_title").html("Draw me wearing this, wearing <span> only this</span>");
-            $("h4").css("font-size",".8em");
+            //$("h4").css("font-size",".8em");
             break;
         case "big_toe":
             $('*').css("font-family", "Open Sans");
@@ -403,7 +403,7 @@ function theme_font_changer(theme_value){
         case "girl_fight":
             $('*').css("font-family", "GFS Didot, serif");
             $(".game_title").html("YOU, ARE <span> NOT </span> PREPARED !!!");
-            $("h3 span").css("font-size", "1em");
+            //$("h3 span").css("font-size", "1em");
             break;
         default: return; //why staying at background not work, had to switch background-image
     }//end switch
