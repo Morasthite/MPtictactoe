@@ -484,6 +484,7 @@ $(document).ready(function(){
     // theme_background_sound_play(theme_value);
     // theme_click_sound_controls(theme_value);
     // theme_background_changer(theme_value);
+    theme_background_sound_play (theme_value);
     create_grid_array();
     /////dynamic creation of game board
     game_board_creation();
@@ -495,6 +496,7 @@ $(document).ready(function(){
         last_data = local_storage_restore();
         restore_last_game_board(last_data);
     });
+
 });//TODO **** end document ready
 
 //TODO ***************************** RESET SECTION  *******************************//
