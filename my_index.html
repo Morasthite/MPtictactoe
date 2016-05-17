@@ -22,7 +22,8 @@
       <button id="logo" type="button" class="btn btn-default" data-toggle="modal" data-target="#mySetting" onclick="modalSubmition()"></button>
       <div class="button-group">
           <button id="reset" >Reset</button>
-          <button class="pause-background-sound-button"></button>
+          <!--<button class="pause-background-sound-button"></button>-->
+          <button id="pause-background-sound-button"></button>
       </div>
       <div class="player_names">
             <span class="col-sm-5 xs-hidden" id="player_one"></span>
@@ -171,8 +172,8 @@
                      </select>
                  </div>
                  <div class="sound-control">
-                     <audio loop id="classroom-background-sound">
-                         <source src="audio/background_sound_classroom.mp3" type="audio/mpeg">
+                     <audio loop id="background_sound_auto_shop">
+                         <source src="audio/background_sound_auto_shop.mp3" type="audio/mpeg">
                      </audio>
                      <audio loop id="starwars-background-sound">
                          <source src="audio/background_sound_starwars.mp3" type="audio/mpeg">
@@ -187,8 +188,8 @@
                      <audio loop id="girlfight-background-sound">
                          <source src="audio/background_sound_girlfight.mp3" type="audio/mpeg">
                      </audio>
-                     <audio id="click-sound-classroom">
-                         <source src="audio/click_sound_chalk.mp3" type="audio/mpeg">
+                     <audio id="click_sound_auto_shop">
+                         <source src="audio/click_sound_auto_shop.mp3" type="audio/mpeg">
                      </audio>
                      <audio id="click-sound-beach">
                          <source src="audio/click_sound_beach.mp3" type="audio/mpeg">
@@ -213,7 +214,7 @@
                      </audio>
                  </div><!--closing audio div-->
                  <button id="restore">Restore Last Game</button>
-                 <button id="setting_submit" type="submit" >Submit</button>
+                 <button onclick="modalSubmition()" id="setting_submit" type="submit" data-dismiss="modal">Submit</button>
              <!--<div class="modal-footer">-->
                 <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
              </div>

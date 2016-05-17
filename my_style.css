@@ -403,7 +403,7 @@ div > div:nth-child(5) > select > option
     width: 7vh;
     border-radius: 50%;
     color: #ffff66;
-    font-size: 1.9em;
+    font-size: 1.9vw;
     text-shadow: 1px 1px 5px black;
     position: absolute;
     top: 60vh;
@@ -425,14 +425,19 @@ div > div:nth-child(5) > select > option
     border: 3px solid darkgreen;
 }
 
-#reset, .pause-background-sound-button {
+#reset,
+.pause-background-sound-button {
     height: 5vh;
     width: 5vh;
     font-size: 1em;
     position: static;
 }
-#restore, #setting_submit {animation: glowing 1000ms infinite;}
-.pause-background-sound-button { border-radius: 50%; position: relative; top: 1vh;}
+#restore, #setting_submit {
+    animation: glowing 1000ms infinite;
+}
+#pause-background-sound-button {
+    border-radius: 50%; position: relative; top: 1vh;
+}
 .button-group {
     position: absolute;
     font-size: 1.5em;
@@ -453,13 +458,15 @@ div > div:nth-child(5) > select > option
 .button-group button:hover {
     background-color: rgba(255,255,255,.2);
 }
-#player_one, #player_two, #vs {
+#player_one,
+#player_two,
+#vs {
     align-content: center;
     text-align: center;
     padding: 5%;
     font-size: 1.5vw;
     transition-duration: 3s;
-    height:100%;
+    height: 100%;
     color: #fff;
     transform: scale(1.3);
 }

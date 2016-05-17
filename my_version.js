@@ -7,7 +7,7 @@ var player2_name_value;
 var num_of_rows = 3;
 var num_of_cells_to_win = 3;
 var theme_value = "auto_shop";
-var background_value = "chalkboard_background";
+var background_value = "background_sound_auto_shop";
 var player_symbol = 'ex';
 var grid_array = [];
 var last_clicked;
@@ -38,6 +38,7 @@ function restore_last_game_board (last_data) {
         game_board_grid=[];
         game_board_creation();
         theme_value = last_data.theme_value;
+        theme_background_sound_play(theme_value);
         theme_click_sound_controls(theme_value);
         theme_background_changer(theme_value);
         for (var i=0;i<num_of_rows;i++) {
@@ -72,44 +73,44 @@ function store_essential_data () {
 
 //TODO ***************************** ANIMATION  *******************************//
 
-// function animate_winner_name () {
-//     if(player_symbol == 'ex') {
-//         $(".player2").removeClass("player");
-//         $('.player2').addClass('animate, winner2');//, player2-wins');
-//         $('.player2').append("<p class='wins'> WhooHoo!</p>");
-//         $('.player2').append("<p class='wins'> Alright!</p>");
-//         $('.player1').append("<p class='wins'> Hire Me!</p>");
-//         $('.player2').append("<p class='wins'> Yeah...Boy!</p>");
-//         $('.player2').append("<p class='wins'> Great Job!</p>");
-//         $('.player2').append("<p class='wins'> Steve Jobs!</p>");
-//         $('.player2').append("<p class='wins'> Take that!</p>");
-//         $('.player2').append("<p class='wins'> Wins!</p>");
-//         $('.player1').append("<p class='wins'> Promise me you won't let go, Jack!</p>");
-//         $('.player1').removeClass('animate');
-//         //$(".animate.winner").append("congratulations");
-//     }//end if
-//     else {
-//         $(".player1").removeClass("player");
-//         $('.player1').addClass('animate, winner');//, player1-wins');
-//         $('.player1').append("<p class='wins'> Yeehhawww!</p>");
-//         $('.player1').append("<p class='wins'> Dan was slapped, take that!</p>");
-//         $('.player1').append("<p class='wins'> Alright!</p>");
-//         $('.player1').append("<p class='wins'> OMG LUCKY!</p>");
-//         $('.player1').append("<p class='wins'> Hire Me!</p>");
-//         $('.player1').append("<p class='wins'> Great Job!</p>");
-//         $('.player1').append("<p class='wins'> Wins!</p>");
-//         $('.player1').append("<p class='wins'> It's about time!</p>");
-//         $('.player1').append("<p class='wins'> Nice Win!</p>");
-//
-//         $('.player2').removeClass('animate');
-//     }//end else
-//     setTimeout(function(){
-//         $('.wins').remove();
-//     },10000);
-//     //$(' Wins').remove();
-// }//end of animate_name function $(".appended.animate.winner").html(<h3>Congratulations</h3>);
-//
-// // Player name animation function
+function animate_winner_name () {
+    if(player_symbol == 'ex') {
+        $(".player2").removeClass("player");
+        $('.player2').addClass('animate, winner2');//, player2-wins');
+        $('.player2').append("<p class='wins'> WhooHoo!</p>");
+        $('.player2').append("<p class='wins'> Alright!</p>");
+        $('.player1').append("<p class='wins'> Hire Me!</p>");
+        $('.player2').append("<p class='wins'> Yeah...Boy!</p>");
+        $('.player2').append("<p class='wins'> Great Job!</p>");
+        $('.player2').append("<p class='wins'> Steve Jobs!</p>");
+        $('.player2').append("<p class='wins'> Take that!</p>");
+        $('.player2').append("<p class='wins'> Wins!</p>");
+        $('.player1').append("<p class='wins'> Don't let go, Jack!</p>");
+        $('.player1').removeClass('animate');
+        //$(".animate.winner").append("congratulations");
+    }//end if
+    else {
+        $(".player1").removeClass("player");
+        $('.player1').addClass('animate, winner');//, player1-wins');
+        $('.player1').append("<p class='wins'> Yeehhawww!</p>");
+        $('.player1').append("<p class='wins'> Dan was slapped, take that!</p>");
+        $('.player1').append("<p class='wins'> Alright!</p>");
+        $('.player1').append("<p class='wins'> OMG LUCKY!</p>");
+        $('.player1').append("<p class='wins'> Hire Me!</p>");
+        $('.player1').append("<p class='wins'> Great Job!</p>");
+        $('.player1').append("<p class='wins'> Wins!</p>");
+        $('.player1').append("<p class='wins'> It's about time!</p>");
+        $('.player1').append("<p class='wins'> Nice Win!</p>");
+
+        $('.player2').removeClass('animate');
+    }//end else
+    setTimeout(function(){
+        $('.wins').remove();
+    },10000);
+    //$(' Wins').remove();
+}//end of animate_name function $(".appended.animate.winner").html(<h3>Congratulations</h3>);
+
+// Player name animation function
 function animate_name () {
     if(player_symbol === 'ex') {             //if current player is ex, animate
         $('#player_one').addClass('animate');
@@ -122,8 +123,6 @@ function animate_name () {
 }//end of animate_name function
 
 //TODO ***************************** INPUT CAPTURES  *******************************//
-
-
 
 function modalSubmition() {
     game_won= false;
@@ -159,6 +158,13 @@ function modalSubmition() {
     else {
         alert("Number of matches must be > or = number of rows currently on the board, Duh!!");
     }
+    ////checks if non of the player names are entered, it won't show vs as well
+       if (player1_name_value != "" && player2_name_value != "") {
+              $("#vs").text("vs");
+           }
+       else{
+              $("#vs").text("");
+           }
     /////////////getting theme
     //capture theme, store as var
     theme_value = $(".theme_picker_select").val();
@@ -174,7 +180,6 @@ function modalSubmition() {
     theme_ex_changer(theme_value);
     theme_ow_changer(theme_value);
     theme_font_changer(theme_value);
-
     theme_background_sound_play (theme_value);
 
 }///////////end of modal submition
@@ -186,27 +191,27 @@ function theme_background_sound_play (theme_value){
     var desert_background_sound = document.getElementById('desert-background-sound');
     var beach_background_sound = document.getElementById('beach-background-sound');
     var girlfight_background_sound = document.getElementById('girlfight-background-sound');
-    var classroom_background_sound = document.getElementById('classroom-background-sound');
+    var background_sound_auto_shop = document.getElementById('background_sound_auto_shop');
     switch(theme_value){
         case "auto_shop":
-            classroom_background_sound.play();
-            classroom_background_sound.loop = true;
+            background_sound_auto_shop.play();
+            background_sound_auto_shop.loop = true;
             break;
         case "star_wars":
             starwars_background_sound.play();
-            classroom_background_sound.loop = true;
+            starwars_background_sound.loop = true;
             break;
         case "desert_warfare":
             desert_background_sound.play();
-            classroom_background_sound.loop = true;
+            desert_background_sound.loop = true;
             break;
         case "big_toe":
             beach_background_sound.play();
-            classroom_background_sound.loop = true;
+            beach_background_sound.loop = true;
             break;
         case "girl_fight":
             girlfight_background_sound.play();
-            classroom_background_sound.loop = true;
+            girlfight_background_sound.loop = true;
             break;
         default: return;
     }//end switch
@@ -217,10 +222,10 @@ function theme_background_sound_pause (theme_value){
     var desert_background_sound = document.getElementById('desert-background-sound');
     var beach_background_sound = document.getElementById('beach-background-sound');
     var girlfight_background_sound = document.getElementById('girlfight-background-sound');
-    var classroom_background_sound = document.getElementById('classroom-background-sound');
+    var background_sound_auto_shop = document.getElementById('background_sound_auto_shop');
     switch(theme_value){
         case "auto_shop":
-            classroom_background_sound.pause();
+            background_sound_auto_shop.pause();
             break;
         case "star_wars":
             starwars_background_sound.pause();
@@ -244,8 +249,8 @@ function theme_background_sound_pause_initiator(){
 
 function theme_click_sound_controls (theme_value){
     switch(theme_value){
-        case "class_room":
-            cell_click_sound_control("click-sound-classroom");
+        case "auto_shop":
+            cell_click_sound_control("click_sound_auto_shop");
             break;
         case "star_wars":
             cell_click_sound_control("click-sound-starwars");
@@ -268,17 +273,17 @@ function cell_click_sound_control(click_sound_id){
     clicksound.play();
 }//end cell_click_sound function
 
-function intro_sound_play(){
-    var intro_sound = document.getElementById("intro-sound");
-    intro_sound.play();
-    intro_sound.loop = true;
-}//end intro_sound_control function
-
-function intro_sound_pause(){
-    var intro_sound = document.getElementById("intro-sound");
-    intro_sound.pause();
-    $(".shutup-barney-button").hide();
-}//end intro_sound_control function
+// function intro_sound_play(){
+//     var intro_sound = document.getElementById("intro-sound");
+//     intro_sound.play();
+//     intro_sound.loop = true;
+// }//end intro_sound_control function
+//
+// function intro_sound_pause(){1
+//     var intro_sound = document.getElementById("intro-sound");
+//     intro_sound.pause();
+//     $(".shutup-barney-button").hide();
+// }//end intro_sound_control function
 
 function applause_winner(){
     var applause_winner_sound = document.getElementById("game-won-sound");
@@ -296,22 +301,22 @@ function theme_background_changer(theme_value){  //take input: theme_value and c
     //change background
     switch(theme_value) {
         case "auto_shop":
-            $('.wraper').css("background-image", "url(images/back1.jpg)");
+            $('.wrapper').css("background-image", "url(images/back1.jpg)");
             break;
         case "star_wars":
-            $('.wraper').css("background-image", "url(images/background/starwars_background.jpg)");
+            $('.wrapper').css("background-image", "url(images/background/starwars_background.jpg)");
               break;
         case "desert_warfare":
-            $('.wraper').css("background-image", "url(images/background/desert_background.jpg)");
+            $('.wrapper').css("background-image", "url(images/background/desert_background.jpg)");
             break;
         case "big_toe":
-            $('.wraper').css("background-image", "url(images/background/beach_background.jpg)");
+            $('.wrapper').css("background-image", "url(images/background/beach_background.jpg)");
             break;
         case "girl_fight":
-            $('.wraper').css("background-image", "url(images/background/girlfight_background.jpg)");
+            $('.wrapper').css("background-image", "url(images/background/girlfight_background.jpg)");
             break;
         case "class_room":
-            $('.wraper').css("background-image", "url(images/chalkboard.jpg)");
+            $('.wrapper').css("background-image", "url(images/chalkboard.jpg)");
             break;
         default: return;
     }//end switch
@@ -320,7 +325,7 @@ function theme_background_changer(theme_value){  //take input: theme_value and c
 function theme_ex_changer(theme_value){ //take input: theme_value and changes ex images
     switch(theme_value) {
         case "auto_shop":
-            $('.ex').css("background-image", "url(images/newX.png)");
+            $('.ex').css("background-image", "url(images/x/auto_shop_x.png)");
             break;
         case "star_wars":
             $('.ex').css("background-image", "url(images/x/starwars_x.png)");
@@ -345,7 +350,7 @@ function theme_ow_changer(theme_value){  //take input: theme_value and changes b
     //change background
     switch(theme_value) {
         case "auto_shop":
-            $('.ow').css("background-image", "url(images/Tire.png)");
+            $('.ow').css("background-image", "url(images/o/auto_shop_o.png)");
             break;
         case "star_wars":
             $('.ow').css("background-image", " url(images/o/starwars_o.png)");
