@@ -340,9 +340,7 @@
 
 .modal-top-spacer { line-height: 20vh;}
 
-select option {
-color: black;
-}
+
 
 
 .modal-title,
@@ -358,6 +356,20 @@ color: black;
     top: 5vh;
     color: #ffff66;
     text-shadow: 2px 2px 5px black;
+}
+
+select option,
+select.number_of_rows.form-control,
+select.number_of_matches.form-control,
+select.theme_picker_select.form-control,
+div.theme_picking > select > option,
+div.matches-number.form-group > select > option,
+input#player1.form-control,
+input#player2.form-control,
+div > div:nth-child(5) > select > option
+{
+    color: black;
+    text-shadow: 2px 2px 5px white;
 }
 
 .modal-title,
@@ -398,11 +410,21 @@ color: black;
     left: 50%;
     transform: translateX(-50%);
 }
+.pause-background-sound-button {
+    top: 2vh;
+}
+
 #restore {
     height: 12vh;
     width: 12vh;
-    top: 40vh;
+    top: 60vh;
+    border: 3px solid darkgreen;
 }
+#setting_submit {
+    top: 40vh;
+    border: 3px solid darkgreen;
+}
+
 #reset, .pause-background-sound-button {
     height: 5vh;
     width: 5vh;
