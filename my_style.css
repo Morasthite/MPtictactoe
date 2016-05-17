@@ -395,7 +395,7 @@ div > div:nth-child(5) > select > option
     /*text-align: center;*/
     /*font-family: 'Roboto', sans-serif;*/
 /*}*/
-#setting_submit, #restore, #reset, #pause-background-sound-button {
+#setting_submit, #restore, #reset, #pause-background-sound-button, .pause-background-sound-button {
     background-image: url("images/modalbackground.png");
     background-size: cover;
     height: 7vh;
@@ -420,6 +420,18 @@ div > div:nth-child(5) > select > option
     top: 63vh;
     border: 3px solid darkgreen;
     transform: translateX(100%);
+    background-image: url("images/soundbutton.png");
+}
+.pause-background-sound-button{
+    border: 3px solid darkgreen;
+    transform: translateX(100%);
+    font-size: 1em;
+    position: absolute;
+    top:3vh;
+    left: 85vw;
+    height: 5vh;
+    width: 5vh;
+    background-image: url("images/soundbutton.png");
 }
 #restore {
     top: 63vh;
