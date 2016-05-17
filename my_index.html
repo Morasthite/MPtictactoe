@@ -20,11 +20,9 @@
 <div class="container-fluid">
     <div class="wrapper">
       <button id="logo" type="button" class="btn btn-default" data-toggle="modal" data-target="#mySetting" onclick="modalSubmition()"></button>
-      <div class="button-group">
-          <button id="reset" >Reset</button>
+          <button id="reset" style="font-size: 1em; font-family: Roboto">Reset</button>
           <!--<button class="pause-background-sound-button"></button>-->
-          <button id="pause-background-sound-button"></button>
-      </div>
+          <!--<button id="pause-background-sound-button"></button>-->
       <div class="player_names">
             <span class="col-sm-5 xs-hidden" id="player_one"></span>
             <span class="col-sm-2 xs-hidden" id="vs"></span>
@@ -46,12 +44,11 @@
                  <h1 class="modal-title">Settings</h1>
                  <h4 id="mod-plyr-name-heading">Enter players name:</h4>
                  <div class="form-inline  player1-form" role="form">                                <div class="form-group">
-                       <label for="player1">Player 1: </label>
-                       <input class="form-control" type="text" id="player1">
+                       <!--<label for="player1" placeholder="Enter Player 1's Name"></label>-->
+                       <input class="form-control" type="text" id="player1" placeholder="Enter Player 1's Name">
                      </div>
                      <div class="form-group player2-form">
-                         <label for="player2">Player 2: </label>
-                         <input class="form-control" type="text" id="player2">
+                         <input class="form-control" type="text" id="player2" placeholder="Enter Player 2's Name">
                      </div>
                  </div>
                  <div class="form-group">
@@ -219,8 +216,9 @@
                          <!--<source src="audio/intro_song_barney.mp3" type="audio/mpeg">-->
                      <!--</audio>-->
                  </div><!--closing audio div-->
-                 <button id="restore">Restore Last Game</button>
-                 <button onclick="modalSubmition()" id="setting_submit" type="submit" data-dismiss="modal">Submit</button>
+                 <button style="font-size: 1em; font-family: Roboto" id="restore">Restore</button>
+                 <button style="font-size: 1.5em; font-family: Roboto" onclick="modalSubmition()" id="setting_submit" type="submit" data-dismiss="modal">Submit</button>
+                 <button id="pause-background-sound-button" style="font-size: 1em; font-family: Roboto">Sound Off</button>
              <!--<div class="modal-footer">-->
                 <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
              </div>

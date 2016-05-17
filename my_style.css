@@ -286,6 +286,7 @@
     background: url("images/background/auto_shop_background.jpg") no-repeat;
     background-size:cover;
     padding: 5%;
+    position: relative;
 }
 .game_board {
     position: absolute;
@@ -338,11 +339,9 @@
 
 }
 
-.modal-top-spacer { line-height: 20vh;}
-
-
-
-
+.modal-top-spacer {
+    line-height: 15vh;
+}
 .modal-title,
 .modal label,
 .modal h4,
@@ -396,7 +395,7 @@ div > div:nth-child(5) > select > option
     /*text-align: center;*/
     /*font-family: 'Roboto', sans-serif;*/
 /*}*/
-#setting_submit, #restore, #reset, .pause-background-sound-button {
+#setting_submit, #restore, #reset, #pause-background-sound-button {
     background-image: url("images/modalbackground.png");
     background-size: cover;
     height: 7vh;
@@ -410,54 +409,58 @@ div > div:nth-child(5) > select > option
     left: 50%;
     transform: translateX(-50%);
 }
-.pause-background-sound-button {
-    top: 2vh;
-}
 
-#restore {
+#setting_submit {
     height: 12vh;
     width: 12vh;
     top: 60vh;
     border: 3px solid darkgreen;
 }
-#setting_submit {
-    top: 40vh;
+#pause-background-sound-button {
+    top: 63vh;
     border: 3px solid darkgreen;
+    transform: translateX(100%);
+}
+#restore {
+    top: 63vh;
+    border: 3px solid darkgreen;
+    transform: translateX(-200%);
 }
 
-#reset,
-.pause-background-sound-button {
+#reset {
     height: 5vh;
     width: 5vh;
     font-size: 1em;
-    position: static;
+    position: absolute;
+    top:3vh;
+    left: 95vw;
+    border: 3px solid darkgreen;
+
 }
-#restore, #setting_submit {
+#restore, #setting_submit, #reset {
     animation: glowing 1000ms infinite;
 }
-#pause-background-sound-button {
-    border-radius: 50%; position: relative; top: 1vh;
-}
-.button-group {
-    position: absolute;
-    font-size: 1.5em;
-    width: 15vw;
-    height: 5vw;
-    top:8vh;
-    right: 1vw;
-    color: rgba(255,255,255,1);
-}
-.button-group button {
-    border: 0;
-    display: inline-block;
-    padding: 2%;
-    border-radius: 10px;
-    background-color: transparent;
-    box-shadow: 5px 5px 10px black;
-}
-.button-group button:hover {
-    background-color: rgba(255,255,255,.2);
-}
+
+/*.button-group {*/
+    /*position: absolute;*/
+    /*font-size: 1.5em;*/
+    /*width: 15vw;*/
+    /*height: 5vw;*/
+    /*top:8vh;*/
+    /*right: 1vw;*/
+    /*color: rgba(255,255,255,1);*/
+/*}*/
+/*.button-group button {*/
+    /*border: 0;*/
+    /*display: inline-block;*/
+    /*padding: 2%;*/
+    /*border-radius: 10px;*/
+    /*background-color: transparent;*/
+    /*box-shadow: 5px 5px 10px black;*/
+/*}*/
+/*.button-group button:hover {*/
+    /*background-color: rgba(255,255,255,.2);*/
+/*}*/
 #player_one,
 #player_two,
 #vs {
