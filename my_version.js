@@ -14,7 +14,10 @@ var last_clicked;
 var game_won = false;
 var last_data;
 var game_board_grid=[];
-
+var clicked_cells_count = 0;
+var game_score_player_1_wins = 0;
+var game_score_player_2_wins = 0;
+var game_score_draw = 0;
 
 //TODO **************************  LOCAL STORAGE   *******************************/
 
@@ -439,6 +442,7 @@ function game_board_creation () {
                     theme_ow_changer(theme_value);
                     /************************Uto the end of here***********************/
                     this.html.addClass('shakes');
+                    draw_condition_check();
                 }//click handler
             };///new obj
             make_click(new_obj);
@@ -497,9 +501,11 @@ $(document).ready(function(){
         restore_last_game_board(last_data);
     });
 
-});//TODO **** end document ready
+});
+//TODO **** end document ready
 
 //TODO ***************************** RESET SECTION  *******************************//
+
 function reset() {
     console.log('Begin Reset');
     num_of_rows = 3;                            //reset global variables
@@ -507,6 +513,7 @@ function reset() {
     player_symbol = 'ex';
     last_clicked = null;
     game_won = false;
+    clicked_cells_count = 0;
     //theme_background_sound_pause_initiator();   //pause current theme background sound to prevent overlapping of theme sounds when user chooses new one.
     grid_array = [];                            //reset the grid
     create_grid_array();                        //recreate array
@@ -552,9 +559,8 @@ function check_the_win (row, col) {
         animate_winner_name ();
         applause_winner();
     }
-
 }//check the win
-//////////check if there is a match in row
+
 function check_row(row) {
     var match_counter = 0;
     for (var i=0;i<num_of_rows-1;i++){
@@ -573,8 +579,8 @@ function check_row(row) {
     }else {
         return false;
     }
-}////check row
-////////////check if there is a match in column
+}////check row - checks if there is a match in row
+
 function check_col(col) {
     var match_counter = 0;
     for (var i=0;i<num_of_rows-1;i++){
@@ -593,8 +599,8 @@ function check_col(col) {
     }else {
         return false;
     }
-}/////////end of check col
-/////////////// check for diagonal match from left to right
+}/////////end of check col - checks if there is a match in column
+
 function diagonal_check_left_to_right(row,col) {
     var counter_top = 1;
     var counter_down= 0;
@@ -633,8 +639,8 @@ function diagonal_check_left_to_right(row,col) {
     } else {
         return false;
     }
-}//////end of diagonal_check_left_to_right
-//////check for diagonal match from right to left
+}//////end of diagonal_check_left_to_right - checks for diagonal match from left to right
+
 function diagonal_check_right_to_left(row,col) {
     var counter_top = 1;
     var counter_down = 0;
@@ -674,8 +680,17 @@ function diagonal_check_right_to_left(row,col) {
         return false;
     }
 
-}////end of diagonal_check_right to left
-/////click handler needs to specify the last click
+}////end of diagonal_check_right to left - checks for diagonal match from right to left
+
+function draw_condition_check(){
+    var grid_array_total_cells = grid_array.length * grid_array.length;
+    clicked_cells_count++; console.log("clicked_cell_count is now: "+clicked_cells_count);
+    if (clicked_cells_count == grid_array_total_cells){
+        console.log("draw is reached");
+        //animate_drawn_game();
+        game_score_draw++;
+    }
+}//end check_clicked_cells_ function - checks for draw
 
 //TODO ***************************** GRID ARRAY SECTION  *******************************//
 var create_grid_array = function () {
