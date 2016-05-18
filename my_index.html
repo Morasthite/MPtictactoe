@@ -19,12 +19,13 @@
 <body>
 <div class="container-fluid">
     <div class="wrapper">
+       <header class="hidden-xs"></header>
       <button id="logo" type="button" class="btn btn-default" data-toggle="modal" data-target="#mySetting" onclick="modalSubmition()"></button>
           <button id="reset" style="font-size: 1em; font-family: Roboto">Reset</button>
         <button class="pause-background-sound-button" style="font-size: 1em; font-family: Roboto" onclick="theme_background_sound_pause(theme_value)"></button>
           <!--<button class="pause-background-sound-button"></button>-->
           <!--<button id="pause-background-sound-button"></button>-->
-      <div class="player_names">
+      <div class="player_names hidden-xs">
             <span class="col-sm-5 xs-hidden" id="player_one"></span>
             <span class="col-sm-2 xs-hidden" id="vs"></span>
             <span id="player_two" class="col-sm-5 xs-hidden"></span>
@@ -43,10 +44,10 @@
              <div class="modal-body">
                  <br id="modal-top-spacer">
                  <h1 class="modal-title">Settings</h1>
-                 <h4 id="mod-plyr-name-heading" style="font-size: 1.5em; font-family: Roboto">Enter players name:</h4>
-                 <div class="form-inline  player1-form" role="form">                                <div class="form-group">
+                 <h4 id="mod-plyr-name-heading" class="hidden-xs" style="font-size: 1.5em; font-family: Roboto">Enter players name:</h4>
+                 <div class="form-inline  player1-form hidden-xs" role="form">                                <div class="form-group">
                        <!--<label for="player1" placeholder="Enter Player 1's Name"></label>-->
-                       <input class="form-control" type="text" id="player1" placeholder="Enter Player 1's Name">
+                       <input class="form-control " type="text" id="player1" placeholder="Enter Player 1's Name">
                      </div>
                      <div class="form-group player2-form">
                          <input class="form-control" type="text" id="player2" placeholder="Enter Player 2's Name">
