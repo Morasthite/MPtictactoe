@@ -338,7 +338,7 @@ body {
     width: 80vh;
     height: 80vh;
     border-radius: 50%;
-    box-shadow: 5px 5px 25px black;
+    /*box-shadow: 5px 5px 25px black;*/
 }
 
 .modal-top-spacer {
@@ -438,8 +438,8 @@ div > div:nth-child(5) > select > option
     position: absolute;
     top:3vh;
     left: 85vw;
-    height: 5vh;
-    width: 5vh;
+    height: 6vh;
+    width: 6vh;
     background-image: url("images/soundbutton.png");
 }
 #restore {
@@ -449,8 +449,8 @@ div > div:nth-child(5) > select > option
 }
 
 #reset {
-    height: 5vh;
-    width: 5vh;
+    height: 6vh;
+    width: 6vh;
     font-size: 1em;
     position: absolute;
     top:3vh;
@@ -549,10 +549,10 @@ input {
 /*in portrate I have to change the size of game board based on % or vw + change btn group size*/
 @media (orientation:  portrait) {
     .modal-dialog {
-        width: 80vw;
+        /*width: 80vw;*/
         height: 80vw;
         border-radius: 50%;
-        box-shadow: 5px 5px 25px black;
+        /*box-shadow: 5px 5px 25px black;*/
         top: 20vw;
     }
     .modal-body {
@@ -567,14 +567,16 @@ input {
     }
     .form-control {
         height: 5vw;
-        font-size: 2.5vw;
-        padding: 1%;
+        font-size:2.5vw;
+        padding: .5%;
     }
     #reset, .pause-background-sound-button {
-        left: 90vw;
+      left: 75vw;
+        height: 6vh;
+        width: 6vh;
     }
     #reset {
-        top: 10vh;
+
     }
     .game_board {
         position: absolute;
