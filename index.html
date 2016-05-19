@@ -5,204 +5,230 @@
     <meta charset="utf-8">
     <meta name="author" content="Pearl Micah Amina">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=GFS+Didot&subset=greek' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600italic&subset=greek,latin' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Noto+Serif&subset=greek,latin' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-
 <body>
-<div class="wrapper">
-    <nav>
-        <!--<img src="images/cheers.gif">-->
-        <h3 class="game_title">TIC TAC TOE   <span> DEATH MATCH</span> !!!</h3>
-        <button class="pause-background-sound-button"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
-        <button class="reset-button">Reset</button>
-        <button class="restore-button">Restore Last Game</button>
-    </nav><!--close nav-->
-    <div class="players">
-        <div class="player player1">
-            <input id="player1-name-value" class="input-text" type="text" name="first-name" placeholder=" Player 1's Name Here">
-            <input id="player1-name-submit" type="submit" value="Submit">
-        </div><!--Closing player1-->
-        <div class="vs"><span>V</span><span>S</span></div>
-        <div class="player player2">
-            <input id="player2-name-value" class="input-text" type="text" name="first-name" placeholder="Player 2's Name Here">
-            <input id="player2-name-submit" type="submit" value="Submit">
-        </div><!--Closing player2-->
-    </div> <!--Closing players-->
-    <div class="settings">
-        <div class="row-number">
-            <h4>Pick number of rows for your board:</h4>
-            <select class="number_of_rows" name="number_of_rows">
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-                <option value="32">32</option>
-                <option value="33">33</option>
-                <option value="34">34</option>
-                <option value="35">35</option>
-                <option value="36">36</option>
-                <option value="37">37</option>
-                <option value="38">38</option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-                <option value="43">43</option>
-                <option value="44">44</option>
-                <option value="45">45</option>
-                <option value="46">46</option>
-                <option value="47">47</option>
-                <option value="48">48</option>
-                <option value="49">49</option>
-                <option value="50">50</option>
-            </select>
-            <input id="number_of_rows-submit" type="submit" value="Submit">
-        </div>
-        <div class="matches-number">
-            <h4>Pick number of matches to win:</h4>
-            <select class="number_of_matches" name="number_of_matches">
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-                <option value="32">32</option>
-                <option value="33">33</option>
-                <option value="34">34</option>
-                <option value="35">35</option>
-                <option value="36">36</option>
-                <option value="37">37</option>
-                <option value="38">38</option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-                <option value="43">43</option>
-                <option value="44">44</option>
-                <option value="45">45</option>
-                <option value="46">46</option>
-                <option value="47">47</option>
-                <option value="48">48</option>
-                <option value="49">49</option>
-                <option value="50">50</option>
-            </select>
-            <input id="number_of_matches-submit" type="submit" value="Submit">
-        </div>
-        <div class="theme_picker">
-            <h4>Pick a battle ground:</h4>
-            <select class="theme_picker_select" name="battle_ground">
-                <option value="class_room">Class Room</option>
-                <option value="star_wars">Star Wars</option>
-                <option value="desert_warfare">Desert Warfare</option>
-                <option value="big_toe">Big Toe</option>
-                <option value="girl_fight">Girl Fight!!!</option>
-            </select>
-            <input id="theme_picker-submit" type="submit" value="Submit">
-        </div>
-        <button class="shutup-barney-button" value="barney_intro_music">Shut Up, Barney</button>
-    </div><!--close settings-->
-    <div class="sound-control">
-        <audio loop id="classroom-background-sound">
-            <source src="audio/background_sound_classroom.mp3" type="audio/mpeg">
-        </audio>
-        <audio loop id="starwars-background-sound">
-            <source src="audio/background_sound_starwars.mp3" type="audio/mpeg">
-        </audio>
-        <audio loop id="desert-background-sound">
-            <source src="audio/background_sound_desert.mp3
+<div class="container-fluid">
+    <div class="wrapper">
+       <header class="hidden-xs"><h3 class="game_title">TIC TAC TOE   <span> DEATH MATCH</span> !!!</h3></header>
+      <button id="logo" type="button" class="btn btn-default" data-toggle="modal" data-target="#mySetting" onclick="modalSubmition()"></button>
+          <button id="reset" style="font-size: 1em; font-family: Roboto">Reset</button>
+        <button class="pause-background-sound-button" style="font-size: 1em; font-family: Roboto" onclick="theme_background_sound_pause(theme_value)"></button>
+          <!--<button class="pause-background-sound-button"></button>-->
+          <!--<button id="pause-background-sound-button"></button>-->
+      <div class="player_names hidden-xs">
+            <span class="col-sm-5 xs-hidden" id="player_one"></span>
+            <span class="col-sm-2 xs-hidden" id="vs"></span>
+            <span id="player_two" class="col-sm-5 xs-hidden"></span>
+      </div>
+      <div class="game_board">
+      </div><!--end of game board-->
+      <!-- Modal -->
+      <div class="modal fade" id="mySetting" role="dialog">
+          <div class="modal-dialog">
+           <!-- Modal content-->
+           <div class="modal-content">
+             <!--<div class="modal-header">-->
+                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                <!--<h2 class="modal-title">settings</h2>-->
+             <!--</div>-->
+             <div class="modal-body">
+                 <br id="modal-top-spacer">
+                 <h1 class="modal-title">Settings</h1>
+                 <h4 id="mod-plyr-name-heading" class="hidden-xs" style="font-size: 1.5em; font-family: Roboto">Enter players name:</h4>
+                 <div class="form-inline  player1-form hidden-xs" role="form">                                <div class="form-group">
+                       <!--<label for="player1" placeholder="Enter Player 1's Name"></label>-->
+                       <input class="form-control " type="text" id="player1" placeholder="Enter Player 1's Name">
+                     </div>
+                     <div class="form-group player2-form">
+                         <input class="form-control" type="text" id="player2" placeholder="Enter Player 2's Name">
+                     </div>
+                 </div>
+                 <div class="form-group">
+                     <h4 style="font-size: 1.5em; font-family: Roboto">Choose the number of rows for your game:</h4>
+                     <select class="number_of_rows form-control" name="number_of_rows">
+                         <option value="3">3</option>
+                         <option value="4">4</option>
+                         <option value="5">5</option>
+                         <option value="6">6</option>
+                         <option value="7">7</option>
+                         <option value="8">8</option>
+                         <option value="9">9</option>
+                         <option value="10">10</option>
+                         <option value="11">11</option>
+                         <option value="12">12</option>
+                         <option value="13">13</option>
+                         <option value="14">14</option>
+                         <option value="15">15</option>
+                         <option value="16">16</option>
+                         <option value="17">17</option>
+                         <option value="18">18</option>
+                         <option value="19">19</option>
+                         <option value="20">20</option>
+                         <option value="21">21</option>
+                         <option value="22">22</option>
+                         <option value="23">23</option>
+                         <option value="24">24</option>
+                         <option value="25">25</option>
+                         <option value="26">26</option>
+                         <option value="27">27</option>
+                         <option value="28">28</option>
+                         <option value="29">29</option>
+                         <option value="30">30</option>
+                         <option value="31">31</option>
+                         <option value="32">32</option>
+                         <option value="33">33</option>
+                         <option value="34">34</option>
+                         <option value="35">35</option>
+                         <option value="36">36</option>
+                         <option value="37">37</option>
+                         <option value="38">38</option>
+                         <option value="39">39</option>
+                         <option value="40">40</option>
+                         <option value="41">41</option>
+                         <option value="42">42</option>
+                         <option value="43">43</option>
+                         <option value="44">44</option>
+                         <option value="45">45</option>
+                         <option value="46">46</option>
+                         <option value="47">47</option>
+                         <option value="48">48</option>
+                         <option value="49">49</option>
+                         <option value="50">50</option>
+                     </select>
+                 </div>
+                 <div class="matches-number form-group">
+                     <h4 style="font-size: 1.5em; font-family: Roboto">Pick number of matches to win:</h4>
+                     <select class="number_of_matches form-control" name="number_of_matches">
+                         <option value="3">3</option>
+                         <option value="4">4</option>
+                         <option value="5">5</option>
+                         <option value="6">6</option>
+                         <option value="7">7</option>
+                         <option value="8">8</option>
+                         <option value="9">9</option>
+                         <option value="10">10</option>
+                         <option value="11">11</option>
+                         <option value="12">12</option>
+                         <option value="13">13</option>
+                         <option value="14">14</option>
+                         <option value="15">15</option>
+                         <option value="16">16</option>
+                         <option value="17">17</option>
+                         <option value="18">18</option>
+                         <option value="19">19</option>
+                         <option value="20">20</option>
+                         <option value="21">21</option>
+                         <option value="22">22</option>
+                         <option value="23">23</option>
+                         <option value="24">24</option>
+                         <option value="25">25</option>
+                         <option value="26">26</option>
+                         <option value="27">27</option>
+                         <option value="28">28</option>
+                         <option value="29">29</option>
+                         <option value="30">30</option>
+                         <option value="31">31</option>
+                         <option value="32">32</option>
+                         <option value="33">33</option>
+                         <option value="34">34</option>
+                         <option value="35">35</option>
+                         <option value="36">36</option>
+                         <option value="37">37</option>
+                         <option value="38">38</option>
+                         <option value="39">39</option>
+                         <option value="40">40</option>
+                         <option value="41">41</option>
+                         <option value="42">42</option>
+                         <option value="43">43</option>
+                         <option value="44">44</option>
+                         <option value="45">45</option>
+                         <option value="46">46</option>
+                         <option value="47">47</option>
+                         <option value="48">48</option>
+                         <option value="49">49</option>
+                         <option value="50">50</option>
+                     </select>
+                     </div>
+                 <div class="theme_picking">
+                     <h4 style="font-size: 1.5em; font-family: Roboto">Pick your favorite theme:</h4>
+                     <select class="theme_picker_select form-control" name="battle_ground">
+                         <option value="auto_shop">Auto Shop</option>
+                         <option value="star_wars">Star Wars</option>
+                         <option value="desert_warfare">Desert Warfare</option>
+                         <option value="big_toe">Big Toe</option>
+                         <option value="girl_fight">Girl Fight!!!</option>
+                         <option value="class_room">Class Room</option>
+                     </select>
+                 </div>
+                 <div class="sound-control">
+                     <audio loop id="auto_shop_background_sound">
+                         <source src="audio/background_sound_auto_shop.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio loop id="starwars-background-sound">
+                         <source src="audio/background_sound_starwars.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio loop id="desert-background-sound">
+                         <source src="audio/background_sound_desert.mp3
             " type="audio/mpeg">
-        </audio>
-        <audio loop id="beach-background-sound">
-            <source src="audio/background_sound_beach.mp3" type="audio/mpeg">
-        </audio>
-        <audio loop id="girlfight-background-sound">
-            <source src="audio/background_sound_girlfight.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="click-sound-classroom">
-            <source src="audio/click_sound_chalk.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="click-sound-beach">
-            <source src="audio/click_sound_beach.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="click-sound-desert">
-            <source src="audio/click_sound_desert.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="click-sound-starwars">
-            <source src="audio/click_sound_starwars.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="click-sound-girlfight">
-            <source src="audio/click_sound_girlfight.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="game-won-sound">
-            <source src="audio/game_won_clapping.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="button-click-sound">
-            <source src="audio/button_click_sound.mp3" type="audio/mpeg">
-        </audio>
-        <audio loop id="intro-sound">
-            <source src="audio/intro_song_barney.mp3" type="audio/mpeg">
-        </audio>
-    </div><!--closing audio div-->
-    <div class="game_board"></div><!--Closing board-->
-    <div class="game won"></div>
-</div><!--Closing wrapper-->
+                     </audio>
+                     <audio loop id="beach-background-sound">
+                         <source src="audio/background_sound_beach.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio loop id="classroom-background-sound">
+                         <source src="audio/background_sound_classroom.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio loop id="girlfight-background-sound">
+                         <source src="audio/background_sound_girlfight.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio id="click_sound_auto_shop">
+                         <source src="audio/click_sound_auto_shop.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio id="click-sound-beach">
+                         <source src="audio/click_sound_beach.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio id="click-sound-desert">
+                         <source src="audio/click_sound_desert.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio id="click-sound-starwars">
+                         <source src="audio/click_sound_starwars.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio id="click-sound-girlfight">
+                         <source src="audio/click_sound_girlfight.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio id="click-sound-classroom">
+                         <source src="audio/click_sound_chalk.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio id="game-won-sound">
+                         <source src="audio/game_won_clapping.mp3" type="audio/mpeg">
+                     </audio>
+                     <audio id="button-click-sound">
+                         <source src="audio/button_click_sound.mp3" type="audio/mpeg">
+                     </audio>
+                     <!--<audio loop id="intro-sound">-->
+                         <!--<source src="audio/intro_song_barney.mp3" type="audio/mpeg">-->
+                     <!--</audio>-->
+                 </div><!--closing audio div-->
+                 <button style="font-size: 1em; font-family: Roboto" id="restore">Restore</button>
+                 <button style="font-size: 1.5em; font-family: Roboto" onclick="modalSubmition()" id="setting_submit" type="submit" data-dismiss="modal">Submit</button>
+                 <button id="pause-background-sound-button" style="font-size: 1em; font-family: Roboto" onclick="theme_background_sound_pause(theme_value)"></button>
+             <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+             </div>
+           </div>
+         </div>
+         </div>
+      </div><!--end of modal-->
+    </div><!--wrapper-->
+</div><!--container fluid-->
 </body>
 </html>
