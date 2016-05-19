@@ -2,7 +2,6 @@
     font-family: "Gochi Hand";
 }
 
-
 @keyframes glowing {
     0% {text-shadow: 0 0 20px lawngreen;}
     50% {text-shadow: 0 0 20px green;}
