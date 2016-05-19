@@ -96,7 +96,7 @@ h3.game_title span {color: red}
     background-color: inherit;
     background: url("images/mp.gif")no-repeat;
     background-size: contain;
-    border: 2px solid lightgreen;
+    border: 2px solid #006633;
     transition-duration: 1s;
     transform: scale(1);
     border-radius: 50%;
@@ -184,25 +184,25 @@ div > div:nth-child(5) > select > option
     font-size: 1.9vw;
     text-shadow: 1px 1px 5px black;
     position: absolute;
-    top: 60vh;
+    top: 55vh;
     left: 50%;
     transform: translateX(-50%);
-    border: .1vh solid white;
+    border: .3vh solid white;
 }
 #setting_submit {
     height: 12vh;
     width: 12vh;
-    top: 60vh;
-    border: 3px solid white;
+    top: 55vh;
+    #border: 3px solid white;
 }
 #pause-background-sound-button {
-    top: 63vh;
-    border: 3px solid white;
+    top: 58vh;
+    #border: 3px solid white;
     transform: translateX(100%);
     background-image: url("images/soundbutton.png");
 }
 .pause-background-sound-button{
-    border: .2vh solid white;
+    #border: .2vh solid white;
     transform: translateX(100%);
     font-size: 1em;
     position: absolute;
@@ -213,8 +213,8 @@ div > div:nth-child(5) > select > option
     background-image: url("images/soundbutton.png");
 }
 #restore {
-    top: 63vh;
-    border: .2vh solid white;
+    top: 58vh;
+    #border: .2vh solid white;
     transform: translateX(-200%);
 }
 
@@ -225,7 +225,7 @@ div > div:nth-child(5) > select > option
     position: absolute;
     top:3vh;
     left: 95vw;
-    border: 3px solid white;
+    #border: 3px solid white;
 
 }
 #restore, #setting_submit, #reset {
@@ -324,9 +324,6 @@ input {
       left: 75vw;
         height: 6vh;
         width: 6vh;
-    }
-    #reset {
-
     }
     .game_board {
         position: absolute;
