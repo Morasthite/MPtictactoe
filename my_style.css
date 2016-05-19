@@ -1,203 +1,7 @@
-* {
-    box-sizing: border-box;
+* {    box-sizing: border-box;
     font-family: "Gochi Hand";
 }
-/*.wrapper {*/
-    /*!*font-size: initial;*!*/
-    /*position: relative;*/
-    /*height: 100vh;*/
-    /*width: 99vw;*/
-    /*margin: 0 auto;*/
-    /*background-image: url(images/chalkboard.jpg);*/
-    /*background-size: cover;*/
-    /*background-repeat: repeat;*/
-/*}*/
-/*!******************* NAV SECTION *******************!*/
-/*nav {*/
-    /*position: relative;*/
-    /*height: 9vh;*/
-/*}*/
-/*h3 {*/
-    /*text-align: center;*/
-    /*color: white;*/
-    /*font-size: 200%;*/
-    /*margin: 0 auto;*/
-/*}*/
-/*!*change font size adn padding*!*/
-/*h3 span {color: red}*/
-/*.reset-button,*/
-/*.restore-button, .shutup-barney-button {*/
-    /*color: yellow;*/
-    /*font-size: 1.6em;*/
-    /*display: block;*/
-    /*text-align: center;*/
-    /*position: absolute;*/
-    /*background-color: transparent;*/
-    /*top: 1.3em;*/
-    /*right: 2em;*/
-    /*border-radius: 10px;*/
-    /*box-shadow: 5px 5px 10px black;*/
-    /*padding: .3em;*/
-/*}*/
-/*.restore-button {*/
-    /*left: 2em;*/
-/*}*/
-/*.pause-background-sound-button {*/
-    /*position: absolute;*/
-    /*top: .5em;*/
-    /*right: 6em;*/
-    /*width: 2em;*/
-    /*height: 2em;*/
-    /*border-radius: 10px;*/
-    /*box-shadow: 5px 5px 10px black;*/
-/*}*/
-/*!* change deleted repeated stuff and added them to restore button*!*/
-/*.shutup-barney-button {*/
-    /*left: 3vw;*/
-    /*top: 60vh;*/
-/*}*/
-/*!* merged all these three classes together just left the difference*!*/
-/*.row-number, .matches-number, .theme_picker {*/
-    /*line-height: 2em;*/
-    /*display: block;*/
-    /*position: absolute;*/
-    /*left: 3vw;*/
-    /*top: 10vh;*/
-    /*color: white;*/
-    /*font-size: 1.3em;*/
-/*}*/
-/*.matches-number {*/
-    /*top: 25vh;*/
-/*}*/
 
-/*.theme_picker {*/
-    /*top: 40vh;*/
-/*}*/
-/*!*change: added select here and added border radius*!*/
-/*input[type="submit"], select {*/
-    /*color: black;*/
-    /*box-shadow: 2px 2px 8px black;*/
-    /*background-color: 	white;*/
-    /*border-radius: 2px;*/
-    /*font-size: 1em;*/
-/*}*/
-/*input {*/
-    /*color: white;*/
-    /*border-radius: 2px;*/
-    /*border:0px;*/
-    /*box-shadow: 2px 2px 8px black inset;*/
-    /*background-color: #404040;*/
-/*}*/
-/*!*change: added this part*!*/
-/*input[type="text"] {*/
-    /*font-size: .8em;*/
-    /*padding: .3em;*/
-/*}*/
-/*input[type="submit"]:hover,*/
-/*.restore-button:hover,*/
-/*.reset-button:hover,*/
-/*.shutup-barney-button:hover*/
-/*{*/
-    /*color: white;*/
-    /*box-shadow: 2px 2px 8px red;*/
-    /*background-color: 	orange;*/
-/*}*/
-/*select {*/
-    /*color: black;*/
-/*}*/
-/*h4 {*/
-    /*-webkit-margin-before: 2em;*/
-    /*-webkit-margin-after: 0;*/
-/*}*/
-/*!******************* PLAYERS SECTION *******************!*/
-/*!*change: added font size*!*/
-/*.players {*/
-    /*position: relative;*/
-    /*height: 5vh;*/
-    /*width: auto;*/
-    /*margin: 0 auto;*/
-    /*font-size: 1.4em;*/
-/*}*/
-/*.player {*/
-    /*height: auto;*/
-    /*display: inline-block;*/
-    /*color: white;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*position: absolute;*/
-    /*left: 50%;*/
-    /*transform: translateX(-170%);*/
-    /*bottom: 0;*/
-/*}*/
-/*.vs {*/
-    /*display: inline-block;*/
-    /*color: white;*/
-    /*font-size: 2em;*/
-    /*position: absolute;*/
-    /*left: 50%;*/
-    /*transform: translateX(-50%);*/
-    /*padding-top: .5em;*/
-/*}*/
-/*.player2 {*/
-    /*position: absolute;*/
-    /*padding: 0;*/
-    /*margin: 0;*/
-    /*left: 50%;*/
-    /*transform: translateX(70%);*/
-    /*transition-duration: 5s;*/
-    /*font-size: 1em;*/
-/*}*/
-/*.player1 {*/
-    /*transition-duration: 5s;*/
-    /*font-size: 1em;*/
-    /*margin: 0;*/
-/*}*/
-/*.winner {*/
-    /*z-index: 5;*/
-    /*position: fixed;*/
-    /*top: 50%;*/
-    /*left:50%;*/
-    /*transform: translate(-50%,-50%);*/
-    /*font-size: 8em;*/
-    /*animation: glowing 1000ms infinite;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*line-height:.7em;*/
-/*}*/
-/*.winner2 {*/
-    /*z-index: 5;*/
-    /*position: fixed;*/
-    /*top: 50%;*/
-    /*left:50%;*/
-    /*transform: translate(-50%,-50%);*/
-    /*font-size: 8em;*/
-    /*animation: glowing2 1000ms infinite;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*line-height:.7em;*/
-/*}*/
-/*div.players > div.vs > span:nth-child(2) {*/
-    /*color: lawngreen;*/
-/*}*/
-/*div.players > div.vs > span:nth-child(1) {*/
-    /*color: red;*/
-/*}*/
-/*div.player.player1.appended {*/
-    /*font-size: 3em;*/
-    /*color: lawngreen;*/
-/*}*/
-/*div.player.player1.appended > span {*/
-    /*font-size: .5em;*/
-    /*color: lawngreen;*/
-/*}*/
-/*div.player.player2.appended {*/
-    /*font-size: 3em;*/
-    /*color: red;*/
-/*}*/
-/*div.player.player2.appended > span {*/
-    /*font-size: .5em;*/
-    /*color: red;*/
-/*}*/
 
 @keyframes glowing {
     0% {text-shadow: 0 0 20px lawngreen;}
@@ -212,46 +16,7 @@
 .animate {
     animation: glowing 1000ms infinite;
 }
-/*!***********SOUND*********!*/
-/*audio {*/
-    /*position: absolute;*/
-    /*bottom: 2vh;*/
-    /*left: 2vw;*/
-/*}*/
-/*!*******************BOARD*******************!*/
-/*.game_board {*/
-    /*!*border: 1px solid yellow;*!*/
-    /*position: absolute;*/
-    /*bottom: 2vh;*/
-    /*left: 50%;*/
-    /*transform: translateX(-50%);*/
-    /*width: 80vh;*/
-    /*height: 80vh;*/
-    /*margin: 0 auto;*/
-    /*font-size: 0;*/
-/*}*/
 
-/*.cell{width: 2em;*/
-    /*border: 1px solid white;*/
-    /*height: 2em;*/
-    /*display: inline-block;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-/*}*/
-/*!*.ex {*!*/
-/*!*background: url("images/x.png") no-repeat;*!*/
-/*!*background-size: contain;*!*/
-/*!*}*!*/
-/*.ex {*/
-    /*background-image: url("images/x.png");*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: contain;*/
-/*}*/
-/*.ow {*/
-    /*background-image: url(images/o.png);*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: contain;*/
-/*}*/
 .winning-cell {
     background-color: red;
 }
@@ -291,9 +56,19 @@ body {
     padding: 5%;
     position: relative;
 }
+h3.game_title {
+text-align: center;
+color: white;
+font-size: 200%;
+margin: 0 auto;
+}
+/*change font size adn padding*/
+h3.game_title span {color: red}
+
+
 .game_board {
     position: absolute;
-    bottom:0%;
+    bottom:0;
     left:50%;
     width: 80vh;
     height: 80vh;
@@ -386,10 +161,7 @@ div > div:nth-child(5) > select > option
 .player1-form { position: relative; left: 10%;}
 .player2-form { position: relative; left: 15%;}
 .modal select { width: 10vw; left: 50%; transform: translateX(-50%);}
-/*.modal button {*/
-    /*margin: 2% auto;*/
-    /*padding:-1em ;*/
-/*}*/
+
 .modal-content {
     background: url("images/modalbackground.png") no-repeat;
     background-size: cover;
@@ -400,10 +172,6 @@ div > div:nth-child(5) > select > option
     color: purple;
     text-shadow: 1px 1px 5px orange;
 }
-/*.modal-header {*/
-    /*text-align: center;*/
-    /*font-family: 'Roboto', sans-serif;*/
-/*}*/
 #setting_submit, #restore, #reset, #pause-background-sound-button, .pause-background-sound-button {
     background-image: url("images/modalbackground.png");
     background-size: cover;
@@ -432,7 +200,7 @@ div > div:nth-child(5) > select > option
     background-image: url("images/soundbutton.png");
 }
 .pause-background-sound-button{
-    border: 3px solid white;
+    border: .2vh solid white;
     transform: translateX(100%);
     font-size: 1em;
     position: absolute;
@@ -444,7 +212,7 @@ div > div:nth-child(5) > select > option
 }
 #restore {
     top: 63vh;
-    border: 3px solid white;
+    border: .2vh solid white;
     transform: translateX(-200%);
 }
 
@@ -462,26 +230,6 @@ div > div:nth-child(5) > select > option
     animation: glowing 1000ms infinite;
 }
 
-/*.button-group {*/
-    /*position: absolute;*/
-    /*font-size: 1.5em;*/
-    /*width: 15vw;*/
-    /*height: 5vw;*/
-    /*top:8vh;*/
-    /*right: 1vw;*/
-    /*color: rgba(255,255,255,1);*/
-/*}*/
-/*.button-group button {*/
-    /*border: 0;*/
-    /*display: inline-block;*/
-    /*padding: 2%;*/
-    /*border-radius: 10px;*/
-    /*background-color: transparent;*/
-    /*box-shadow: 5px 5px 10px black;*/
-/*}*/
-/*.button-group button:hover {*/
-    /*background-color: rgba(255,255,255,.2);*/
-/*}*/
 #player_one,
 #player_two,
 #vs {
@@ -534,7 +282,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     height: 7%;
-    background-color: red;
+    #background-color: red;
     width: 30%;
 }
 input {
@@ -545,7 +293,7 @@ input {
         display: inline-block;
         width: 20vh;
     }
-/*}*/
+
 /*in portrate I have to change the size of game board based on % or vw + change btn group size*/
 @media (orientation:  portrait) {
     .modal-dialog {
@@ -591,3 +339,241 @@ input {
         /*box-shadow: 5px 5px 10px rgba(102,102,0,.9);*/
     }
 }
+
+
+/*.wrapper {*/
+/*!*font-size: initial;*!*/
+/*position: relative;*/
+/*height: 100vh;*/
+/*width: 99vw;*/
+/*margin: 0 auto;*/
+/*background-image: url(images/chalkboard.jpg);*/
+/*background-size: cover;*/
+/*background-repeat: repeat;*/
+/*}*/
+/*!******************* NAV SECTION *******************!*/
+/*nav {*/
+/*position: relative;*/
+/*height: 9vh;*/
+/*}*/
+/*h3 {*/
+/*text-align: center;*/
+/*color: white;*/
+/*font-size: 200%;*/
+/*margin: 0 auto;*/
+/*}*/
+/*!*change font size adn padding*!*/
+/*h3 span {color: red}*/
+/*.reset-button,*/
+/*.restore-button, .shutup-barney-button {*/
+/*color: yellow;*/
+/*font-size: 1.6em;*/
+/*display: block;*/
+/*text-align: center;*/
+/*position: absolute;*/
+/*background-color: transparent;*/
+/*top: 1.3em;*/
+/*right: 2em;*/
+/*border-radius: 10px;*/
+/*box-shadow: 5px 5px 10px black;*/
+/*padding: .3em;*/
+/*}*/
+/*.restore-button {*/
+/*left: 2em;*/
+/*}*/
+/*.pause-background-sound-button {*/
+/*position: absolute;*/
+/*top: .5em;*/
+/*right: 6em;*/
+/*width: 2em;*/
+/*height: 2em;*/
+/*border-radius: 10px;*/
+/*box-shadow: 5px 5px 10px black;*/
+/*}*/
+/*!* change deleted repeated stuff and added them to restore button*!*/
+/*.shutup-barney-button {*/
+/*left: 3vw;*/
+/*top: 60vh;*/
+/*}*/
+/*!* merged all these three classes together just left the difference*!*/
+/*.row-number, .matches-number, .theme_picker {*/
+/*line-height: 2em;*/
+/*display: block;*/
+/*position: absolute;*/
+/*left: 3vw;*/
+/*top: 10vh;*/
+/*color: white;*/
+/*font-size: 1.3em;*/
+/*}*/
+/*.matches-number {*/
+/*top: 25vh;*/
+/*}*/
+
+/*.theme_picker {*/
+/*top: 40vh;*/
+/*}*/
+/*!*change: added select here and added border radius*!*/
+/*input[type="submit"], select {*/
+/*color: black;*/
+/*box-shadow: 2px 2px 8px black;*/
+/*background-color: 	white;*/
+/*border-radius: 2px;*/
+/*font-size: 1em;*/
+/*}*/
+/*input {*/
+/*color: white;*/
+/*border-radius: 2px;*/
+/*border:0px;*/
+/*box-shadow: 2px 2px 8px black inset;*/
+/*background-color: #404040;*/
+/*}*/
+/*!*change: added this part*!*/
+/*input[type="text"] {*/
+/*font-size: .8em;*/
+/*padding: .3em;*/
+/*}*/
+/*input[type="submit"]:hover,*/
+/*.restore-button:hover,*/
+/*.reset-button:hover,*/
+/*.shutup-barney-button:hover*/
+/*{*/
+/*color: white;*/
+/*box-shadow: 2px 2px 8px red;*/
+/*background-color: 	orange;*/
+/*}*/
+/*select {*/
+/*color: black;*/
+/*}*/
+/*h4 {*/
+/*-webkit-margin-before: 2em;*/
+/*-webkit-margin-after: 0;*/
+/*}*/
+/*!******************* PLAYERS SECTION *******************!*/
+/*!*change: added font size*!*/
+/*.players {*/
+/*position: relative;*/
+/*height: 5vh;*/
+/*width: auto;*/
+/*margin: 0 auto;*/
+/*font-size: 1.4em;*/
+/*}*/
+/*.player {*/
+/*height: auto;*/
+/*display: inline-block;*/
+/*color: white;*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*position: absolute;*/
+/*left: 50%;*/
+/*transform: translateX(-170%);*/
+/*bottom: 0;*/
+/*}*/
+/*.vs {*/
+/*display: inline-block;*/
+/*color: white;*/
+/*font-size: 2em;*/
+/*position: absolute;*/
+/*left: 50%;*/
+/*transform: translateX(-50%);*/
+/*padding-top: .5em;*/
+/*}*/
+/*.player2 {*/
+/*position: absolute;*/
+/*padding: 0;*/
+/*margin: 0;*/
+/*left: 50%;*/
+/*transform: translateX(70%);*/
+/*transition-duration: 5s;*/
+/*font-size: 1em;*/
+/*}*/
+/*.player1 {*/
+/*transition-duration: 5s;*/
+/*font-size: 1em;*/
+/*margin: 0;*/
+/*}*/
+/*.winner {*/
+/*z-index: 5;*/
+/*position: fixed;*/
+/*top: 50%;*/
+/*left:50%;*/
+/*transform: translate(-50%,-50%);*/
+/*font-size: 8em;*/
+/*animation: glowing 1000ms infinite;*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*line-height:.7em;*/
+/*}*/
+/*.winner2 {*/
+/*z-index: 5;*/
+/*position: fixed;*/
+/*top: 50%;*/
+/*left:50%;*/
+/*transform: translate(-50%,-50%);*/
+/*font-size: 8em;*/
+/*animation: glowing2 1000ms infinite;*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*line-height:.7em;*/
+/*}*/
+/*div.players > div.vs > span:nth-child(2) {*/
+/*color: lawngreen;*/
+/*}*/
+/*div.players > div.vs > span:nth-child(1) {*/
+/*color: red;*/
+/*}*/
+/*div.player.player1.appended {*/
+/*font-size: 3em;*/
+/*color: lawngreen;*/
+/*}*/
+/*div.player.player1.appended > span {*/
+/*font-size: .5em;*/
+/*color: lawngreen;*/
+/*}*/
+/*div.player.player2.appended {*/
+/*font-size: 3em;*/
+/*color: red;*/
+/*}*/
+/*div.player.player2.appended > span {*/
+/*font-size: .5em;*/
+/*color: red;*/
+/*}*/
+/*!***********SOUND*********!*/
+/*audio {*/
+/*position: absolute;*/
+/*bottom: 2vh;*/
+/*left: 2vw;*/
+/*}*/
+/*!*******************BOARD*******************!*/
+/*.game_board {*/
+/*!*border: 1px solid yellow;*!*/
+/*position: absolute;*/
+/*bottom: 2vh;*/
+/*left: 50%;*/
+/*transform: translateX(-50%);*/
+/*width: 80vh;*/
+/*height: 80vh;*/
+/*margin: 0 auto;*/
+/*font-size: 0;*/
+/*}*/
+
+/*.cell{width: 2em;*/
+/*border: 1px solid white;*/
+/*height: 2em;*/
+/*display: inline-block;*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*}*/
+/*!*.ex {*!*/
+/*!*background: url("images/x.png") no-repeat;*!*/
+/*!*background-size: contain;*!*/
+/*!*}*!*/
+/*.ex {*/
+/*background-image: url("images/x.png");*/
+/*background-repeat: no-repeat;*/
+/*background-size: contain;*/
+/*}*/
+/*.ow {*/
+/*background-image: url(images/o.png);*/
+/*background-repeat: no-repeat;*/
+/*background-size: contain;*/
+/*}*/

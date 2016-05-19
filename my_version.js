@@ -363,21 +363,27 @@ function theme_ow_changer(theme_value){  //take input: theme_value and changes b
     switch(theme_value) {
         case "auto_shop":
             $('.ow').css("background-image", "url(images/o/auto_shop_o.png)");
+            $('.cell').css("background-color", "rgba(175, 175, 124, 0.2)");
             break;
         case "star_wars":
             $('.ow').css("background-image", " url(images/o/starwars_o.png)");
+            $('.cell').css("background-color", "rgba(28, 86, 23, 0.23)");
             break;
         case "desert_warfare":
             $('.ow').css("background-image", " url(images/o/desert_o.png)");
+            $('.cell').css("background-color", "rgba(0,0,0,0.2)");
             break;
         case "big_toe":
             $('.ow').css("background-image", " url(images/o/beach_o.png)");
+            $('.cell').css("background-color", "rgba(23, 61, 86, 0.23)");
             break;
         case "girl_fight":
             $('.ow').css("background-image", " url(images/o/girlfight_o.png)");
+            $('.cell').css("background-color", "rgba(46, 125, 177, 0.23)");
             break;
         case "class_room":
             $('.ow').css("background-image", " url(images/o/classroom_o.png)");
+            $('.cell').css("background-color", "rgba(0,0,0,0.2)");
             break;
         default: return;
     }//end switch
@@ -386,7 +392,9 @@ function theme_ow_changer(theme_value){  //take input: theme_value and changes b
 function theme_font_changer(theme_value){
     switch(theme_value) {
         case "class_room":
-            //$('*').css("font-family", "");
+            $('*').css("font-family", "Arial");
+            $(".game_title").html("We Don't Need No <span> Education </span> !!!");
+            $(".game_title").css("color", "white");
             break;
         case "star_wars":
             $('*').css("font-family", "Arial");
@@ -512,8 +520,7 @@ $(document).ready(function(){
 //TODO ***************************** RESET SECTION  *******************************//
 
 function reset() {
-    console.log('Begin Reset');
-    num_of_rows = 3;                            //reset global variables
+    console.log('Begin Reset');                     //reset global variables
     num_of_cells_to_win = 3;
     player_symbol = 'ex';
     last_clicked = null;
