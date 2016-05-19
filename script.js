@@ -428,7 +428,7 @@ function theme_font_changer(theme_value){
             break;
         case "auto_shop":
             $('*').css("font-family", "Gochi Hand");
-            $(".game_title").html("TIC TAC TOE  <span> DEATH MATCH</span> !!!");
+            $(".game_title").html("TIC TAC <span> TOW</span> !!!");
             //$("h3 span").css("font-size", "1em");
             break;
         default: return; //why staying at background not work, had to switch background-image
