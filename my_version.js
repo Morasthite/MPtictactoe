@@ -416,6 +416,11 @@ function theme_font_changer(theme_value){
             $(".game_title").html("YOU, ARE <span> NOT </span> PREPARED !!!");
             //$("h3 span").css("font-size", "1em");
             break;
+        case "auto_shop":
+            $('*').css("font-family", "Gochi Hand");
+            $(".game_title").html("TIC TAC TOE  <span> DEATH MATCH</span> !!!");
+            //$("h3 span").css("font-size", "1em");
+            break;
         default: return; //why staying at background not work, had to switch background-image
     }//end switch
 }//end theme font changer function

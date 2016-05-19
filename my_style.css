@@ -113,9 +113,11 @@ h3.game_title span {color: red}
     width: 80vh;
     height: 80vh;
     border-radius: 50%;
-    /*box-shadow: 5px 5px 25px black;*/
+    box-shadow: 5px 5px 25px black;
 }
-
+.modal-body h4, .modal-body h1{
+    font-family: Open Sans !important;
+}
 .modal-top-spacer {
     line-height: 15vh;
 }
@@ -146,6 +148,7 @@ div > div:nth-child(5) > select > option
 {
     color: black;
     text-shadow: 2px 2px 5px white;
+    font-family: Open Sans !important;
 }
 .form-group {
     margin-bottom: .5vh;
