@@ -7,11 +7,11 @@ var player2_name_value;
 var num_of_rows = 3;
 var num_of_cells_to_win = 3;
 var theme_value = "auto_shop";
-//var background_value = "background_sound_auto_shop";
 var player_symbol = 'ex';
 var grid_array = [];
 var last_clicked;
 var game_won = false;
+var enableSubmit = false;
 var last_data;
 var game_board_grid=[];
 var clicked_cells_count = 0;
@@ -128,6 +128,10 @@ function animate_name () {
 //TODO ***************************** INPUT CAPTURES  *******************************//
 
 function modalSubmition() {
+
+    ///////////////////getting num of cells to win, check to see
+    num_of_rows = $('.number_of_rows').val();
+    num_of_rows = parseInt(num_of_rows);
     game_won= false;
     //////getting players names
     player1_name_value = $("#player1").val();
@@ -139,27 +143,14 @@ function modalSubmition() {
     ///////getting num of rows
     var row_num = $('.number_of_rows').val();
     if (row_num != "") {
-        num_of_rows = $('.number_of_rows').val();
-        num_of_rows = parseInt(num_of_rows);                    //converts value to number and store
-        //call game board creation
         $(".game_board").empty();                         //empty game board, else, new board created will have old game
         grid_array = [];                                  //clear grid
         create_grid_array();                              //recreate grid
         game_board_creation();                            //create game board
     }//////////end of if to check if the user has new num of row
-    ///////////////////getting num of cells to win
-    num_of_cells_to_win = $('.number_of_matches').val();
-    console.log('num_of_cells_to_win = ' + num_of_cells_to_win);
-    num_of_cells_to_win = parseInt(num_of_cells_to_win);
-    if(num_of_cells_to_win <= num_of_rows) {
-        $(".game_board").empty();
-        grid_array = [];
-        create_grid_array();
-        game_board_creation();
-    }
-    else {
-        alert("Number of matches must be > or = number of rows currently on the board, Duh!!");
-    }
+    $('.number_of_matches').on('change',cellsVsMatches);
+    $('.number_of_rows').on('change',cellsVsMatches);
+
     ////checks if non of the player names are entered, it won't show vs as well
        if (player1_name_value != "" && player2_name_value != "") {
               $("#vs").text("vs");
@@ -183,6 +174,37 @@ function modalSubmition() {
     theme_background_sound_play (theme_value);
 
 }///////////end of modal submition
+
+function enableSubmitButton(){
+    if(enableSubmit === false) {
+        $("#setting_submit").attr('disabled','disabled');
+    }
+    else {
+        $("#setting_submit").removeAttr('disabled');
+        console.log('removing attribute and enable button');
+    }
+}//if flag is false, disable submit, if true, enable
+
+function cellsVsMatches(){
+    console.log("hi");
+    num_of_cells_to_win = $('.number_of_matches').val();
+    num_of_cells_to_win = parseInt(num_of_cells_to_win);
+    console.log('num_of_cells_to_win = ' + num_of_cells_to_win);
+    num_of_rows = $('.number_of_rows').val();
+    num_of_rows = parseInt(num_of_rows);
+    console.log('num_of_rows = ' + num_of_rows);
+    if(num_of_cells_to_win <= num_of_rows) {
+        $(".game_board").empty();
+        grid_array = [];
+        create_grid_array();
+        game_board_creation();
+        enableSubmit = true;
+        enableSubmitButton();
+    }//end if
+    else {
+        alert("Number of matches must be > or = number of rows currently on the board, Duh!!");
+    }//end else
+}
 
 //TODO ***************************** SOUND CONTROL *******************************
 
@@ -506,7 +528,7 @@ $(document).ready(function(){
         last_data = local_storage_restore();
         restore_last_game_board(last_data);
     });
-
+    enableSubmitButton();
 });
 //TODO **** end document ready
 
