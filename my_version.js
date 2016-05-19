@@ -285,18 +285,6 @@ function cell_click_sound_control(click_sound_id){
     clicksound.play();
 }//end cell_click_sound function
 
-// function intro_sound_play(){
-//     var intro_sound = document.getElementById("intro-sound");
-//     intro_sound.play();
-//     intro_sound.loop = true;
-// }//end intro_sound_control function
-//
-// function intro_sound_pause(){1
-//     var intro_sound = document.getElementById("intro-sound");
-//     intro_sound.pause();
-//     $(".shutup-barney-button").hide();
-// }//end intro_sound_control function
-
 function applause_winner(){
     var applause_winner_sound = document.getElementById("game-won-sound");
     applause_winner_sound.play();
