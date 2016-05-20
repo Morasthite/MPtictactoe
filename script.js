@@ -11,7 +11,6 @@ var player_symbol = 'ex';
 var grid_array = [];
 var last_clicked;
 var game_won = false;
-var enableSubmit = false;
 var last_data;
 var game_board_grid=[];
 var clicked_cells_count = 0;
@@ -148,8 +147,6 @@ function modalSubmition() {
         create_grid_array();                              //recreate grid
         game_board_creation();                            //create game board
     }//////////end of if to check if the user has new num of row
-    $('.number_of_matches').on('change',cellsVsMatches);
-    $('.number_of_rows').on('change',cellsVsMatches);
 
     ////checks if non of the player names are entered, it won't show vs as well
        if (player1_name_value != "" && player2_name_value != "") {
@@ -175,34 +172,29 @@ function modalSubmition() {
 
 }///////////end of modal submition
 
-function enableSubmitButton(){
-    if(enableSubmit === false) {
+function disableSubmitButton(){
         $("#setting_submit").attr('disabled','disabled');
-    }
-    else {
+}
+function enableSubmitButton() {
         $("#setting_submit").removeAttr('disabled');
         console.log('removing attribute and enable button');
-    }
-}//if flag is false, disable submit, if true, enable
+}
 
 function cellsVsMatches(){
-    console.log("hi");
-    num_of_cells_to_win = $('.number_of_matches').val();
-    num_of_cells_to_win = parseInt(num_of_cells_to_win);
-    console.log('num_of_cells_to_win = ' + num_of_cells_to_win);
-    num_of_rows = $('.number_of_rows').val();
-    num_of_rows = parseInt(num_of_rows);
-    console.log('num_of_rows = ' + num_of_rows);
-    if(num_of_cells_to_win <= num_of_rows) {
-        $(".game_board").empty();
-        grid_array = [];
-        create_grid_array();
-        game_board_creation();
-        enableSubmit = true;
+            console.log("number of matches changed to:"+num_of_cells_to_win);
+            console.log("number of rows changed to:"+num_of_rows);
+    var number_of_cells_to_win = $('.number_of_matches').val();
+        number_of_cells_to_win = parseInt(number_of_cells_to_win);
+            console.log('num_of_cells_to_win = ' + num_of_cells_to_win);
+    var number_of_rows = $('.number_of_rows').val();
+        number_of_rows = parseInt(number_of_rows);
+            console.log('num_of_rows = ' + number_of_rows);
+    if(number_of_cells_to_win <= number_of_rows) {
         enableSubmitButton();
     }//end if
     else {
         alert("Number of matches must be > or = number of rows currently on the board, Duh!!");
+        disableSubmitButton();
     }//end else
 }
 
@@ -528,7 +520,8 @@ $(document).ready(function(){
         last_data = local_storage_restore();
         restore_last_game_board(last_data);
     });
-    enableSubmitButton();
+    $('.number_of_matches').on('change',cellsVsMatches);
+    $('.number_of_rows').on('change',cellsVsMatches);
 });
 //TODO **** end document ready
 
