@@ -60,6 +60,7 @@ text-align: center;
 color: white;
 font-size: 200%;
 margin: 0 auto;
+    text-shadow: 2px 2px 5px black;
 }
 /*change font size adn padding*/
 h3.game_title span {color: red}
@@ -84,6 +85,7 @@ h3.game_title span {color: red}
     width: 80vh;
     height: 13%;
     left: 50%;
+    text-shadow: 2px 2px 5px black;
     transform: translateX(-50%);
 }
 #logo {
@@ -296,6 +298,9 @@ input {
         width: 20vh;
     }
 
+button:focus {
+    outline: none;
+}
 /*in portrate I have to change the size of game board based on % or vw + change btn group size*/
 @media (orientation:  portrait) {
     .modal-dialog {
